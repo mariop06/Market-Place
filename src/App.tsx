@@ -1,12 +1,9 @@
-import { Layout } from "./app/components/layout-basic/Layout";
-
+import Routing from "./routes/routing/routing";
 
 export const App=()=>{
   return(
-      <div>
-        <Layout>
-
-        </Layout>
-      </div>
+    <div className="w-full h-[100vh]">
+        <Routing/>
+    </div>
   );
 }
