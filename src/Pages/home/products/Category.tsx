@@ -23,6 +23,7 @@ export const Category=()=>{
                             ProductOrSellers={element.Product}
                             Icon={element.Icon}
                             Price={element.Price}
+                            path={element.path}
                             controller
                         />
                         ))
@@ -38,6 +39,7 @@ export const Category=()=>{
                             ProductOrSellers={element.Product}
                             Icon={element.Icon}
                             Price={element.Price}
+                            path={element.path}
                             controller
                         />
                         ))
@@ -53,6 +55,7 @@ export const Category=()=>{
                             ProductOrSellers={element.Product}
                             Icon={element.Icon}
                             Price={element.Price}
+                            path={element.path}
                             controller
                         />
                         ))

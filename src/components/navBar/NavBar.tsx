@@ -10,20 +10,20 @@ export const NavBar =()=>{
             <div className="flex flex-row justify-between">
                 <div>Logo</div>
                 <div className="flex gap-6 " >
-                    <InputButton value="Sign up"  />
-                    <InputButton value="Login" controller />
+                    <InputButton value="Sign up" onClick={()=>navigate('/shopping')}  />
+                    <InputButton value="Login" controller onClick={()=>navigate('/shopping')}  />
                 </div>
             </div>
             <div className="border-b m-0" />
             <div className="flex flex-row gap-3 justify-between " >
                 <div className="flex flex-row gap-10 justify-center " >
                     {dateNavBar.map((element)=>(
-                        <button onClick={()=>navigate(element.path)} >{element.path}</button>
+                        <button onClick={()=>navigate(element.path)} >{element.name}</button>
                     ))}
                 </div>
                 <div className="flex gap-6 justify-center " >
-                    <InputButton value="Sell Items" />
-                    <button>login</button>
+                    <InputButton value="Sell Items" onClick={()=>navigate('/product/create')}   />
+                    <button>login</button> {/*Icon Cesto! */}
                 </div>
 
             </div>
@@ -35,10 +35,14 @@ export const NavBar =()=>{
 interface IPropsButton{
     value:string;
     controller?:boolean;
+    onClick:()=>void;
+
 }
 
-export const InputButton=({value,controller}:IPropsButton)=>{
+export const InputButton=({value,controller,onClick}:IPropsButton)=>{
     return(
-        <input type="button" value={value}  className={`cursor-pointer rounded-[100px]   w-[100px] h-[28px]  ${controller? ' text-[#FFFF] bg-[#D9D226]':' text-[#787575] bg-white border border-[#D9D226]'}`} />
+        <input type="button" value={value}  className={`cursor-pointer rounded-[100px]   w-[100px] h-[28px]  ${controller? ' text-[#FFFF] bg-[#D9D226]':' text-[#787575] bg-white border border-[#D9D226]'}`}
+        onClick={onClick}
+        />
     );
 }

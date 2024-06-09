@@ -4,6 +4,8 @@ import { CreateProduct } from "@/Pages/home/createProduct/CreateProduct";
 import { FirstPage } from "@/Pages/home/firstPage/FirstPage";
 import { ProductDetails } from "@/Pages/home/productDetails/ProductDetails";
 import { Products } from "@/Pages/home/products/Products";
+import { SellersProfile_User } from "@/Pages/home/sellersProfile_user/SellersProfile_User";
+import {  ShoppingBasket } from "@/Pages/home/shoppingBasket/ShoppingBasket";
 
 
 
@@ -13,7 +15,7 @@ export const HomesRoutes : IRouteProps={
     visibility:'public',
     children:[
        {
-            path:'/home',
+            path:'/shopping',
             element: FirstPage,
             visibility:'public',
         },
@@ -30,6 +32,16 @@ export const HomesRoutes : IRouteProps={
         {
             path:'/product/create',
             element: CreateProduct,
+            visibility:'public',
+        }, 
+        {
+            path:'/shopping/basket',
+            element: ShoppingBasket,
+            visibility:'public',
+        }, 
+        {
+            path:'/seller/profile',
+            element: SellersProfile_User,
             visibility:'public',
         }, 
     ],

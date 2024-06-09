@@ -1,7 +1,8 @@
+
 import { ListProdSellers } from "@/components/listProd-Sellers/ListProdSellers";
 import { listProd } from "../firstPage/elementListOrSellers";
 
-export const CreateProduct=()=>{
+export const SellersProfile_User=()=>{
     return(
         <div className="w-full h-full flex flex-col p-5 gap-0 " >
             <div>back</div> 
@@ -65,3 +66,5 @@ export const CreateProduct=()=>{
         </div>
     );
 }
+
+

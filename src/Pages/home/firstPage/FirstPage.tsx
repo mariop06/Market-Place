@@ -16,6 +16,7 @@ export const FirstPage:React.FC=()=>{
                             ProductOrSellers={element.Product}
                             Icon={element.Icon}
                             Price={element.Price}
+                            path={element.path}
                             controller
                         />
                         ))
@@ -31,6 +32,7 @@ export const FirstPage:React.FC=()=>{
                             <ListProdSellers
                             ProductOrSellers={element.ProductOrSellers}
                             Icon={element.Icon}
+                            path=""
                             control
                         />
                         ))
@@ -46,6 +48,7 @@ export const FirstPage:React.FC=()=>{
                             <ListProdSellers
                             ProductOrSellers={element.ProductOrSellers}
                             Icon={element.Icon}
+                            path=''
                             control
                         />
                         ))
