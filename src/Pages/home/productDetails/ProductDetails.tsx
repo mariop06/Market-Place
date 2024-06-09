@@ -23,6 +23,7 @@ export const ProductDetails=()=>{
                                <ListProdSellers
                                ProductOrSellers={element.ProductOrSellers}
                                Icon={element.Icon}
+                               path={element.path}
                                control
                            />
                            ))

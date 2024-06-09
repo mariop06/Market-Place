@@ -18,7 +18,7 @@ export const ListProdSellers:React.FC<IPropsListOrSellers>=({ProductOrSellers: P
                 controller && ( <Card Product={Product} Price={Price} Icon={Icon} onClick={()=>navigate(path)} controller />)  
             }
             {
-                control && (<Card Product={Product} Price={Price} Icon={Icon} />)
+                control && (<Card Product={Product} Price={Price} Icon={Icon} onClick={()=>navigate(path)} />)
             }
         </div>
     );
@@ -45,7 +45,6 @@ export const Card: React.FC<IPropsCardDate>=({Product,Price,controller,Icon,onCl
                 {
                     controller && ( <span className="flex text-[15px] font-semibold">{Price}</span>)
                 }
-               
             </div>
         </div>
     )

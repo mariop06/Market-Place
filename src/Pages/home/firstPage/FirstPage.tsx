@@ -32,7 +32,7 @@ export const FirstPage:React.FC=()=>{
                             <ListProdSellers
                             ProductOrSellers={element.ProductOrSellers}
                             Icon={element.Icon}
-                            path=""
+                            path={element.path}
                             control
                         />
                         ))
@@ -48,7 +48,7 @@ export const FirstPage:React.FC=()=>{
                             <ListProdSellers
                             ProductOrSellers={element.ProductOrSellers}
                             Icon={element.Icon}
-                            path=''
+                            path={element.path}
                             control
                         />
                         ))

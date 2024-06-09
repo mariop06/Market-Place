@@ -1,30 +1,29 @@
-import { ProductDetails } from "../productDetails/ProductDetails"
 
 
 export const sellers=[
     {
         ProductOrSellers:"Debby Space",
-        path:'',
+        path:'/seller/profile',
         Icon:"Like",
     },
     {
         ProductOrSellers:"Debby Space",
-        path:'',
+        path:'/seller/profile',
         Icon:"Like",
     },
     {
         ProductOrSellers:"Debby Space",
-        path:'',
+        path:'/seller/profile',
         Icon:"Like",
     },
     {
         ProductOrSellers:"Debby Space",
-        path:'',
+        path:'/seller/profile',
         Icon:"Like",
     },
     {
         ProductOrSellers:"Debby Space",
-        path:'',
+        path:'/seller/profile',
         Icon:"Like",
     },
 ]
