@@ -1,6 +1,10 @@
+
+import { useNavigate } from "react-router-dom";
 import { dateNavBar } from "./navProps";
 
 export const NavBar =()=>{
+    const navigate =useNavigate()
+    
     return(
         <div className="bg-white w-full max-h-max p-2 mb-3 text-[#787575] gap-3 flex flex-col justify-center shadow-lg" >
             <div className="flex flex-row justify-between">
@@ -14,7 +18,7 @@ export const NavBar =()=>{
             <div className="flex flex-row gap-3 justify-between " >
                 <div className="flex flex-row gap-10 justify-center " >
                     {dateNavBar.map((element)=>(
-                        <button>{element.path}</button>
+                        <button onClick={()=>navigate(element.path)} >{element.path}</button>
                     ))}
                 </div>
                 <div className="flex gap-6 justify-center " >

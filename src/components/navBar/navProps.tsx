@@ -1,4 +1,5 @@
 import { FirstPage } from "@/Pages/home/firstPage/FirstPage";
+import { Products } from "@/Pages/home/products/Products";
 
 
 export const dateNavBar=[
@@ -8,7 +9,7 @@ export const dateNavBar=[
      },
      {
       path:'Product',
-      element: FirstPage,
+      element: Products,
    },
    {
       path:'Home',

@@ -9,11 +9,11 @@ export const CreateProduct=()=>{
                <h1 className="text-[25px] text-black font-medium" >Adicionar Imagens</h1>
                <div  className="flex gap-[10%] " >
                     <div className="flex flex-col gap-5" >
-                        <div className="bg-[#E3E2E2] w-[400px] h-[400px] rounded-xl shadow-xl"></div>
+                        <div className="bg-[#E3E2E2] w-[640px] h-[400px] rounded-xl shadow-xl"></div>
                         <div className="flex  gap-5 " >
-                            <div className="bg-[#E3E2E2] w-[120px] h-[120px] rounded-xl shadow-xl" ></div>
-                            <div className="bg-[#E3E2E2] w-[120px] h-[120px] rounded-xl shadow-xl" ></div>
-                            <div className="bg-[#E3E2E2] w-[120px] h-[120px] rounded-xl shadow-xl" ></div>
+                            <div className="bg-[#E3E2E2] w-[200px] h-[180px] rounded-xl shadow-xl" ></div>
+                            <div className="bg-[#E3E2E2] w-[200px] h-[180px] rounded-xl shadow-xl" ></div>
+                            <div className="bg-[#E3E2E2] w-[200px] h-[180px] rounded-xl shadow-xl" ></div>
                         </div>
                     </div>
                    
@@ -39,7 +39,6 @@ export const CreateProduct=()=>{
                             <div className="flex flex-col w-[350px]">
                             <button type="submit" className="outline-none rounded-lg w-full bg-slate-400  "  >Carregar</button>
                             </div>
-                             
                             
                         </form>
                    </div>

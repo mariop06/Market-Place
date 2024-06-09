@@ -1,3 +1,4 @@
+import { ProductDetails } from "../productDetails/ProductDetails"
 
 
 export const sellers=[
@@ -26,6 +27,7 @@ export const sellers=[
 export const listProd=[
     {
         Product:'Black Pants',
+        path: ProductDetails,
         Icon: 'heart',
         Price: '6000 AOA',
     },

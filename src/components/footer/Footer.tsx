@@ -8,7 +8,7 @@ export const Footer=()=>{
                     <div>Description</div>
                 </div>
                 
-                <div className="w-[1px] h-full bg-[#0000007d]" />
+                <div className="w-[1px] h-full bg-[#0000007d]" /> {/*Divider */}
 
                 <div className="flex flex-col justify-between" >
                     <div className="flex gap-4" >
