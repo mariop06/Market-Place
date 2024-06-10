@@ -7,7 +7,7 @@ interface IPropsPanel {
 
 export const Panel:React.FC<IPropsPanel>=({controller,value})=>{
     return(
-            <div className={`w-full ${controller? ' h-96':'h-48'} rounded-xl flex justify-center items-center bg-[#D9D226] shadow-xl `} >
+            <div className={`w-full ${controller? ' h-96':'h-48'} rounded-xl flex justify-center items-center bg-[#B2935B] shadow-xl `} >
             <div className="gap-5 w-[60%] h-full flex flex-col justify-center items-center ">
                 <p className="font-semibold text-white text-[30px]">{value}</p>
                    {
