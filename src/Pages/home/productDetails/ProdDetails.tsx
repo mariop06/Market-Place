@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export const ProdDetails=()=>{
     const navigate=useNavigate();
+    
     return(
         <div className="flex flex-col gap-3">
             <h1 className="text-[25px] font-medium  text-[#000000] " >Black Pants</h1>
