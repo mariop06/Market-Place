@@ -2,6 +2,7 @@
 import { AuthLayout } from "@/components/layout/auth/authLayout"
 import { IRouteProps } from "@/interfaces/routes/route"
 import { Login } from "@/Pages/auth/login/Login"
+import { Profile } from "@/Pages/auth/profile/Profile"
 import { Register } from "@/Pages/auth/register/Register"
 
 
@@ -21,6 +22,10 @@ export const AuthRoutes : IRouteProps = {
             element: Register,
             visibility: 'auth',
         },
-
+        {
+            path:'/auth/profile',
+            element: Profile,
+            visibility: 'auth',
+        },
     ],
 }
