@@ -3,7 +3,7 @@ import { ListProdSellers } from "@/components/listProd-Sellers/ListProdSellers";
 import { Panel } from "@/components/panel/Panel";
 import { sellers, listProd } from "./elementListOrSellers";
 
-// Adicione uma classe utilitária ao Tailwind para esconder a barra de rolagem
+
 const customStyles = `
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

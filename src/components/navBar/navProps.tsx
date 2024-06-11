@@ -9,11 +9,7 @@ export const dateNavBar=[
          name:'Product'
       },
       {
-         path:'Home',
-         name:'Shop'
-      },
-      {
-         path:'Home',
-         name:'Shop'
+         path:'/shopping',
+         name:'About'
       },
 ]
