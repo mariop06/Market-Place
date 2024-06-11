@@ -4,9 +4,7 @@ import Routing from "./routes/routing/routing";
 export const App=()=>{
   return(
     <AuthProvider>
-        <div className="w-full h-[100vh]">
-          <Routing/>
-        </div>
+      <Routing/>
     </AuthProvider>
    
   );

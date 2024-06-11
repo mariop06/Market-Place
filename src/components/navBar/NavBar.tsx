@@ -18,7 +18,7 @@ export const NavBar = () => {
         {token && (
           <div className="flex gap-6 justify-center items-center">
             <div className="flex gap-6">
-              <InputButton value="Sign up" onClick={() => navigate('/shopping')}  />
+              <InputButton value="Sign up" onClick={() => navigate('/auth/register')}  />
               <InputButton value="Login" onClick={() => navigate('/auth/login')} controller />
             </div>
           </div>

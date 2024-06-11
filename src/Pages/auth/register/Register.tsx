@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../login/AuthContext';
 
 // Definindo o esquema de validação com zod
 const schema = z.object({
@@ -10,12 +11,13 @@ const schema = z.object({
   email: z.string().email('Email inválido'),
   password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres'),
   role: z.string().min(0,'Selecione: Vendedor ou Comprador') ,//z.enum(['comprador', 'vendedor']),
-  companyName: z.string().min(2, 'Nome da Empresa obrigatório')
+  // companyName: z.string().min(2, 'Nome da Empresa obrigatório')
 });
 
 type FormData = z.infer<typeof schema>;
 
 export const Register = () => {
+  const { setToken } = useContext(AuthContext);
   const [role, setRole] = useState('');
   const navigate = useNavigate();
   
@@ -29,6 +31,7 @@ export const Register = () => {
 
   const onSubmit = (data: FormData) => {
     alert('Conta criada com sucesso!');
+    setToken(false);
     navigate('/shopping');
   };
 
@@ -99,10 +102,10 @@ export const Register = () => {
                   type="text"
                   id="companyName"
                   placeholder="Digite o nome da sua empresa"
-                  {...register('companyName')}
+                  // {...register('companyName')}
                   className="outline-none rounded-lg p-2 bg-gray-100 focus:border border-[#B2935B] focus:bg-white"
                 />
-                {errors.companyName && <span className="text-red-500">{errors.companyName.message}</span>}
+                {/* {errors.companyName && <span className="text-red-500">{errors.companyName.message}</span>} */}
               </div>
             )}
           </div>
