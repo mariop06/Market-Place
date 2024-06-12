@@ -4,14 +4,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../login/AuthContext';
+import { registerUser } from '@/services/api';
 
-// Definindo o esquema de validação com zod
 const schema = z.object({
   nome: z.string().min(1, 'Nome é obrigatório'),
   email: z.string().email('Email inválido'),
   password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres'),
-  role: z.string().min(0,'Selecione: Vendedor ou Comprador') ,//z.enum(['comprador', 'vendedor']),
-  // companyName: z.string().min(2, 'Nome da Empresa obrigatório')
+  role: z.string().min(1, 'Selecione: Vendedor ou Comprador'),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -29,10 +28,17 @@ export const Register = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
-    alert('Conta criada com sucesso!');
-    setToken(false);
-    navigate('/shopping');
+  const onSubmit = async (data: FormData) => {
+    console.log(data); // Verificar os dados no console
+    const response = await registerUser(data);
+    console.log(response); // Adicionar depuração aqui
+    if (response.message === "Usuário registrado com sucesso.") {
+      alert('Conta criada com sucesso!');
+      setToken(false);
+      navigate('/shopping');
+    } else {
+      alert(response.message);
+    }
   };
 
   const handleRoleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -88,7 +94,7 @@ export const Register = () => {
                 onChange={handleRoleChange}
                 className="outline-none rounded-lg p-2 bg-gray-100 focus:border border-[#B2935B] focus:bg-white"
               >
-                {/* <option value="">Selecione</option> */}
+                <option value="">Selecione</option>
                 <option value="comprador">Comprador</option>
                 <option value="vendedor">Vendedor</option>
               </select>
@@ -102,10 +108,8 @@ export const Register = () => {
                   type="text"
                   id="companyName"
                   placeholder="Digite o nome da sua empresa"
-                  // {...register('companyName')}
                   className="outline-none rounded-lg p-2 bg-gray-100 focus:border border-[#B2935B] focus:bg-white"
                 />
-                {/* {errors.companyName && <span className="text-red-500">{errors.companyName.message}</span>} */}
               </div>
             )}
           </div>
