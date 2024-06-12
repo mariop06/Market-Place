@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../login/AuthContext';
-import { registerUser } from '@/services/api';
+import { registerUser } from '@/services/register/api';
 
 const schema = z.object({
   nome: z.string().min(1, 'Nome é obrigatório'),

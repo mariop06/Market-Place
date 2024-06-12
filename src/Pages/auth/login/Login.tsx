@@ -3,9 +3,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useContext } from "react";
-import { AuthContext } from "./AuthContext"; // Importando o contexto
+import { AuthContext } from "./AuthContext";
+import { loginUser } from "@/services/login/apiLogin";
 
-// Definindo o esquema de validação com zod
+
 const schema = z.object({
   email: z.string().email("Email inválido"),
   password: z.string().min(6, "A senha deve ter no mínimo 6 caracteres"),
@@ -15,7 +16,7 @@ type FormData = z.infer<typeof schema>;
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { setToken } = useContext(AuthContext); // Utilizando o contexto para atualizar o token
+  const { setToken } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -24,10 +25,15 @@ export const Login = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    setToken(false); // Atualizando o token
-    navigate('/shopping');
+  const onSubmit = async (data: FormData) => {
+    const response = await loginUser(data);
+    if (response.message === "Login bem-sucedido") {
+      alert('Login bem-sucedido!');
+      setToken(response.token); // Atualizando o token
+      navigate('/shopping');
+    } else {
+      alert(response.message);
+    }
   };
 
   return (
@@ -68,7 +74,7 @@ export const Login = () => {
         <div className="flex flex-col w-[350px]">
           <input
             type="submit"
-            value="Pagar"
+            value="Entrar"
             className="cursor-pointer rounded-lg w-full h-[32px] text-[#787575] text-[20px] font-normal bg-white border border-[#B2935B]"
           />
         </div>
